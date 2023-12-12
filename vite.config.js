@@ -8,5 +8,15 @@ export default defineConfig({
     global: true,
     environment: 'jsdom',
     setupFiles: './setupTest.js'
+  },
+  server: {
+    port: 3000,
+    proxy: {
+      '/api': {
+        target: process.env.API_ROUTE,
+        changeOrigin: true,
+        secure: false
+      }
+    }
   }
 })
