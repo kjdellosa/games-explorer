@@ -1,7 +1,9 @@
+import { Header } from './ui'
+
 function GamePage() {
   return (
     <>
-      Game
+      <Header />
     </>
   )
 }

@@ -13,7 +13,7 @@ export default defineConfig({
     port: 3000,
     proxy: {
       '/api': {
-        target: process.env.API_ROUTE,
+        target: process.env.API_ROUTE ?? 'https://api.dev.cloud.barbooksaustralia.com/code-challenge',
         changeOrigin: true,
         secure: false
       }

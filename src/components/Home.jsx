@@ -1,7 +1,12 @@
+import GamesListContainer from './GamesList/GamesListContainer'
+import { Header, SearchBar } from './ui'
+
 function Home() {
   return (
     <>
-      Home
+      <Header />
+      <SearchBar />
+      <GamesListContainer />
     </>
   )
 }

@@ -9,7 +9,7 @@ const stringContains = (a, b) => {
 export const useGamesList = () => {
   async function getGames() {
     const { data: response } = await axios.get('/api/games')
-    return response.data
+    return response
   }
 
   const { data: games = [], isLoading } = useQuery({
