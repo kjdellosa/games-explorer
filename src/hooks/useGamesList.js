@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import { useQuery } from "@tanstack/react-query"
-import axios from "axios"
+import { useQuery } from '@tanstack/react-query'
+import axios from 'axios'
 
 const stringContains = (a, b) => {
   return a.toLowerCase().includes(b.toLowerCase())
@@ -24,8 +24,8 @@ export const useGamesList = () => {
   }
 
   const filterGames = (games) => {
-    return games.filter(({ name }) => {
-      return stringContains(name, searchValue)
+    return games.filter(({ title }) => {
+      return stringContains(title, searchValue)
     })
   }
 
