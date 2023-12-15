@@ -5,7 +5,7 @@ function Routes() {
   return (
     <Router>
       <Route path='/' element={<Home />} />
-      <Route path='/details' element={<GamePage />} />
+      <Route exact path='/details/:id' element={<GamePage />} />
     </Router>
   )
 }

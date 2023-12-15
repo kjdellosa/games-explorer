@@ -12,10 +12,22 @@ export const useGamesList = () => {
     return response
   }
 
+  async function getGame(id) {
+    const { data: response } = await axios.get('/api/game', { params: { id } })
+    return response
+  }
+
   const { data: games = [], isLoading } = useQuery({
     queryKey: ['games'],
     queryFn: getGames
   })
+
+  const useGetQuery = (id) => {
+    return useQuery({
+      queryKey: ['game', id],
+      queryFn: async () => getGame(id)
+    })
+  }
 
   const [searchValue, setSearchValue] = useState('')
 
@@ -37,6 +49,7 @@ export const useGamesList = () => {
     search: {
       value: searchValue,
       onSearch
-    }
+    },
+    useGetQuery
   }
 }

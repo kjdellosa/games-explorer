@@ -1,6 +1,6 @@
 import './Card.css';
 
-function Card({ text, title, imgUrl }) {
+function Card({ text, title, imgUrl, onBtnClick }) {
   return (
     <div className='card'>
       <h2 className='card-title'>{title}</h2>
@@ -13,7 +13,7 @@ function Card({ text, title, imgUrl }) {
           <p className='card-text'>
             {text}
           </p>
-          <button className='view-more-btn'>View More</button>
+          <button className='view-more-btn' onClick={onBtnClick}>View More</button>
         </div>
       </div>
     </div>
