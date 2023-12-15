@@ -1,11 +1,15 @@
-import { useGamesList } from '../../hooks'
-import { Card } from '../ui'
+import GameCard from './GameCard'
 
-function GamesListContainer() {
-  // const { list, search } = useGamesList()
-
+function GamesListContainer({ list }) {
   return (
-    <Card />
+    <div className='card-container'>
+      {
+        list.games.map(game => {
+          return (<GameCard key={game.id} data={game} />)
+        })
+      }
+    </div>
+
   )
 }
 

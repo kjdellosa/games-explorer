@@ -1,12 +1,15 @@
 import GamesListContainer from './GamesList/GamesListContainer'
 import { Header, SearchBar } from './ui'
+import { useGamesList } from '../hooks'
 
 function Home() {
+  const { list, search } = useGamesList()
+
   return (
     <>
       <Header />
-      <SearchBar />
-      <GamesListContainer />
+      <SearchBar onSearch={search.onSearch} />
+      <GamesListContainer list={list} />
     </>
   )
 }
